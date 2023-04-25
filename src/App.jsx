@@ -10,6 +10,8 @@ import MySkills from './Screens/MySkills';
 import Projects from './Screens/Projects';
 import ProjectGit from './Screens/ProjectGit';
 import SkillsGit from './Screens/SkillsGit';
+import Contact from './Screens/Contact';
+
 
 
 
@@ -29,11 +31,11 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [])
 
+
   return (
     <>
       <div className='app bg-deep-blue'>
         <Navbar isTopOfPage={isTopOfPage} selectedpage={selectedpage} setSelectedPage={setSelectedPage}/>
-
         <div className='w-5/6 mx-auto md:h-full  '>
           {isAboveMediumScreen && (
             <Dotgroup
@@ -41,7 +43,6 @@ export default function App() {
               setSelectedPage={setSelectedPage}
             />
           )}
-
           <Landing setSelectedPage = {setSelectedPage}/>
         </div>
         <LineGradient/>
@@ -51,13 +52,15 @@ export default function App() {
         </div>
         <LineGradient/>
 
-        <div className='w-5/6 mx-auto md:h-full '>
+        <div className='w-5/6 mx-auto '>
           {/* <Projects/> */}
           <ProjectGit/>
         </div>
-
-     
+        <LineGradient/>
         
+        <div className='w-5/6 mx-auto md:h-full '>
+          <Contact/>
+        </div>
 
 
       </div>

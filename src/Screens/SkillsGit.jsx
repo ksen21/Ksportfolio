@@ -2,15 +2,15 @@ import React from 'react';
 
 export default function SkillsGit() {
   return (
-    <div className=" max-w-7xl p-5 py-20" id="skills">
+    <div className="max-w-7xl p-5 py-20" id="skills">
       <div className="text-6xl md:text-7xl text-center flex justify-center font-playfair md:text-left font-medium text-gray-300 pb-4 mb-16">
         Skills
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {skills.map((skill) => {
+        {skills.map((skill,i) => {
           return (
-            <div className="flex space-x-2 items-center">
+            <div className="flex space-x-2 items-center" key={i}>
               {skill.icon && <div className="text-7xl">{skill.icon}</div>}
               {skill.img && <img src={skill.img} className="h-14  w-14" alt=""></img>}
               <div className=" text-gray-500">{skill.skill}</div>

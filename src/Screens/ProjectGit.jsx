@@ -14,7 +14,7 @@ import LineGradient from '../components/LineGradient';
 export default function ProjectGit() {
     return (
         <>    <motion.div
-            className="md:2/4 mx-auto text-center pb-48"
+            className="md:2/4 mx-auto text-center pb-3"
             initial="hidden"
             whileInView='visible'
             viewport={{ once: true, amount: 0.5 }}
@@ -28,9 +28,9 @@ export default function ProjectGit() {
                     </div>
 
                     <div className="grid md:grid-cols-4 sm:md:grid-cols-3 gap-4">
-                        {projects.map((proj) => {
+                        {projects.map((proj,keyy) => {
                             return (
-                                <div className="p-4 shadow-md space-y-4 bg-white">
+                                <div className="p-4 shadow-md space-y-4 bg-white" key={keyy}>
                                     <div className="h-32 overflow-hidden border-b relative">
                                         <img alt="" src={proj.img} className="w-full absolute left-0 my-auto "></img>
                                     </div>
@@ -39,12 +39,13 @@ export default function ProjectGit() {
                                         {proj.details}
                                     </div>
                                     <div className="flex justify-end space-x-4 items-center opacity-40">
-                                        {proj.links.map((link) => {
+                                        {proj.links.map((link,i) => {
                                             return (
                                                 <a
                                                     href={link.link}
-                                                    target={'_blank'}
+                                                    target={'_blank'}                                                 
                                                     rel="noreferrer"
+                                                    key={i}
                                                     className="h-5 cursor-pointer text-2xl text-gray-500 flex items-center"
                                                 >
                                                     {link.icon}
